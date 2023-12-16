@@ -7,8 +7,9 @@ public class Customer extends Akun {
         return this.idCustomer;
     }
 
-    public void setidCustomer(String idCustomer) {
+    public Customer setidCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
+        return this;
     }
 
 }

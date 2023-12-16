@@ -14,40 +14,45 @@ public class Peminjaman {
         return this.idPeminjaman;
     }
 
-    public void setIdPeminjaman(String idPeminjaman) {
+    public Peminjaman setIdPeminjaman(String idPeminjaman) {
         this.idPeminjaman = idPeminjaman;
+        return this;
     }
 
     public Customer getCustomer() {
         return this.customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public Peminjaman setCustomer(Customer customer) {
         this.customer = customer;
+        return this;
     }
 
     public Librarian getLibrarian() {
         return this.librarian;
     }
 
-    public void setLibrarian(Librarian librarian) {
+    public Peminjaman setLibrarian(Librarian librarian) {
         this.librarian = librarian;
+        return this;
     }
 
     public LocalDate getTanggal() {
         return this.tanggal;
     }
 
-    public void setTanggal(LocalDate tanggal) {
+    public Peminjaman setTanggal(LocalDate tanggal) {
         this.tanggal = tanggal;
+        return this;
     }
 
     public ArrayList<DetilPeminjaman> getDetilPeminjamans() {
         return this.detilPeminjamans;
     }
 
-    public void setDetilPeminjamans(ArrayList<DetilPeminjaman> detilPeminjamans) {
+    public Peminjaman setDetilPeminjamans(ArrayList<DetilPeminjaman> detilPeminjamans) {
         this.detilPeminjamans = detilPeminjamans;
+        return this;
     }
 
 }

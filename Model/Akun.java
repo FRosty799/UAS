@@ -9,24 +9,27 @@ public class Akun {
         return this.nama;
     }
 
-    public void setNama(String nama) {
+    public Akun setNama(String nama) {
         this.nama = nama;
+        return this;
     }
 
     public String getEmail() {
         return this.email;
     }
 
-    public void setEmail(String email) {
+    public Akun setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getAlamat() {
         return this.alamat;
     }
 
-    public void setAlamat(String alamat) {
+    public Akun setAlamat(String alamat) {
         this.alamat = alamat;
+        return this;
     }
 
 }

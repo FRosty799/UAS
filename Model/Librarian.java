@@ -7,8 +7,9 @@ public class Librarian {
         return this.idLibrarian;
     }
 
-    public void setIdLibrarian(String idLibrarian) {
+    public Librarian setIdLibrarian(String idLibrarian) {
         this.idLibrarian = idLibrarian;
+        return this;
     }
 
 }

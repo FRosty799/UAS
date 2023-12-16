@@ -5,6 +5,16 @@ public class Buku {
     private String Title;
     private String Author;
     private boolean Availability;
+    private String idBUku;
+
+    public String getIdBUku() {
+        return this.idBUku;
+    }
+
+    public Buku setIdBUku(String idBUku) {
+        this.idBUku = idBUku;
+        return this;
+    }
 
     public String getISBN() {
         return this.ISBN;
