@@ -2,7 +2,7 @@ package UAS.Project.Model;
 
 public class Buku {
     private String ISBN;
-    private String BookTitle;
+    private String Title;
     private String Author;
     private boolean Availability;
 
@@ -10,32 +10,36 @@ public class Buku {
         return this.ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public Buku setISBN(String ISBN) {
         this.ISBN = ISBN;
+        return this;
     }
 
-    public String getBookTitle() {
-        return this.BookTitle;
+    public String getTitle() {
+        return this.Title;
     }
 
-    public void setBookTitle(String BookTitle) {
-        this.BookTitle = BookTitle;
+    public Buku setTitle(String Title) {
+        this.Title = Title;
+        return this;
     }
 
     public String getAuthor() {
         return this.Author;
     }
 
-    public void setAuthor(String Author) {
+    public Buku setAuthor(String Author) {
         this.Author = Author;
+        return this;
     }
 
     public boolean isAvailability() {
         return this.Availability;
     }
 
-    public void setAvailability(boolean Availability) {
+    public Buku setAvailability(boolean Availability) {
         this.Availability = Availability;
+        return this;
     }
 
 }
