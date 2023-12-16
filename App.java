@@ -18,8 +18,31 @@ public class App {
         boolean cont = true;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (cont) {
-            
+            Menu();
+            System.out.println("Pilih Menu");
+            String pilihan = reader.readLine();
+            switch (pilihan) {
+                case "1":
+                    LibControl.DaftarBuku();
+                    break;
+                case "2":
+                    LibControl.Pinjam();
+                    break;
+                case "3":
+                    LibControl.LaporanPeminjaman();
+                    break;
+                default:
+                    cont = false;
+                    break;
+            }
         }
 
+    }
+
+    public static void Menu() {
+        System.out.println("1. Daftar Buku");
+        System.out.println("2. Pinjam");
+        System.out.println("3. Laporan Peminjaman");
+        System.out.println("4. Exit");
     }
 }
