@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,11 +11,11 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import UAS.Project.Model.Buku;
-import UAS.Project.Model.DetilPeminjaman;
-import UAS.Project.Model.Customer;
-import UAS.Project.Model.Librarian;
-import UAS.Project.Model.Peminjaman;
+import model.Buku;
+import model.DetilPeminjaman;
+import model.Customer;
+import model.Librarian;
+import model.Peminjaman;
 
 public class Controller {
     HashMap<String, Buku> bukus = new HashMap();

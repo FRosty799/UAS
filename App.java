@@ -4,10 +4,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import UAS.Project.Control.Controller;
-import UAS.Project.Model.Buku;
-import UAS.Project.Model.Customer;
-import UAS.Project.Model.Librarian;
+import control.Controller;
+import model.Buku;
+import model.Customer;
+import model.Librarian;
 
 public class App {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Librarian extends Akun{
     private String idLibrarian;

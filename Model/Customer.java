@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Customer extends Akun {
     private String idCustomer;
