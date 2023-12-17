@@ -1,4 +1,4 @@
-package UAS.Project.Model;
+package Model;
 
 public class Librarian extends Akun{
     private String idLibrarian;

@@ -1,4 +1,4 @@
-package UAS.Project.Model;
+package Model;
 
 public class DetilPeminjaman {
     private String idDetilPeminjaman;

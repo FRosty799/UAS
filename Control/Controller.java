@@ -1,4 +1,4 @@
-package UAS.Project.Control;
+package Control;
 
 import java.io.BufferedReader;
 import java.io.IOException;

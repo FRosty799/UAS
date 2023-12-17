@@ -1,4 +1,4 @@
-package UAS.Project.Model;
+package Model;
 
 public class Customer extends Akun {
     private String idCustomer;

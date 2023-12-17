@@ -1,4 +1,4 @@
-package UAS.Project.Model;
+package Model;
 
 public class Buku {
     private String ISBN;
