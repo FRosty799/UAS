@@ -9,6 +9,16 @@ public class Peminjaman {
     private Librarian librarian;
     private LocalDate tanggal;
     private ArrayList<DetilPeminjaman> detilPeminjamans;
+    private int total;
+
+    public int getTotal() {
+        return this.total;
+    }
+
+    public Peminjaman setTotal(int total) {
+        this.total = total;
+        return this;
+    }
 
     public String getIdPeminjaman() {
         return this.idPeminjaman;

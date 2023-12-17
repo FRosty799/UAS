@@ -37,6 +37,8 @@ public class App {
             }
         }
 
+        System.out.println("Samapai Jumpa");
+
     }
 
     public static void Menu() {

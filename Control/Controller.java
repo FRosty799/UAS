@@ -44,6 +44,107 @@ public class Controller {
 
         Librarian librarian1 = new Librarian();
         Librarian librarian2 = new Librarian();
-        
+        librarian1.setIdLibrarian("01").setNama("Roxanne").setAlamat("up the road").setEmail("Roxanne1954@gmail.com");
+        librarian2.setIdLibrarian("02").setNama("Carlson").setAlamat("right there").setEmail("Carlson1920@gmail.com");
+        librarians.put(librarian1.getIdLibrarian(),librarian1);
+        librarians.put(librarian2.getIdLibrarian(),librarian2);
+    }
+
+    public void DaftarBuku() {
+        System.out.println("\n=====|Daftar Buku|=====");
+        for (Map.Entry<String,Buku> buku : bukus.entrySet()) {
+            String key = buku.getKey();
+            Buku tBuku = buku.getValue();
+            if (tBuku.isAvailability()) {
+                System.out.println("ID Buku \t : "+key);
+                System.out.println("ISBN \t\t : "+tBuku.getISBN());
+                System.out.println("Judul \t\t : "+tBuku.getTitle());
+                System.out.println("Penulis \t : "+tBuku.getAuthor());
+                System.out.println("");
+            }
+        }
+    }
+
+    public Buku getBuku(String idBuku){
+        return bukus.get(idBuku);
+    }
+    
+    public Librarian getLibrarian(String idLibrarian){
+        return librarians.get(idLibrarian);
+    }
+
+    public Customer getCustomer(String idCustomer){
+        return customers.get(idCustomer);
+    }
+
+    public void Pinjam(){
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<DetilPeminjaman> tDetilPeminjamans = new ArrayList<>();
+        int increment = 0;
+        String cont = "";
+        try{
+            do {
+                increment++;
+                System.out.println("\nSilahkan masukan ID Buku :");
+                String kodeBuku = input.readLine();
+                System.out.println("Jumlah dipinjam \t : ");
+                int jumlah = Integer.valueOf(input.readLine());
+                System.out.println("Kembali meminjam(Y/N)? \t :");
+                cont = input.readLine();
+
+                DetilPeminjaman dp = new DetilPeminjaman();
+                Buku tBuku = getBuku(kodeBuku);
+                dp.setIdDetilPeminjaman("dp"+increment);
+                dp.setBuku(tBuku);
+                dp.setJumlahPeminjaman(jumlah);
+                tDetilPeminjamans.add(dp);
+            } while (cont.equalsIgnoreCase("Y"));
+            System.out.println("\n=====|Daftar Peminjaman|=====");
+            tmplknDaftarPeminjaman(tDetilPeminjamans);
+            BufferedReader inputConfirmation = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Konfirmasi peminjaman (Y/N)?");
+            String confirm = "n";
+            confirm = inputConfirmation.readLine();
+            if (confirm.equalsIgnoreCase("y")) {
+                Peminjaman peminjaman = new Peminjaman();
+                peminjaman.setDetilPeminjamans(tDetilPeminjamans).setIdPeminjaman("L"+peminjamans.size()+1).setCustomer(getCustomer("02")).setLibrarian(getLibrarian("01")).setTanggal(LocalDate.now()).setTotal(TotalPeminjaman(tDetilPeminjamans));
+                peminjamans.add(peminjaman);
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            }
+    }
+
+    public void tmplknDaftarPeminjaman(ArrayList<DetilPeminjaman> dp){
+        for (DetilPeminjaman detilPeminjaman : dp) {
+            System.out.println("Judul Buku : "+detilPeminjaman.getBuku().getTitle());
+            System.out.println("Jumlah \t\t : "+detilPeminjaman.getJumlahPeminjaman()+"\n");
+        }
+    }
+
+    public int TotalPeminjaman(ArrayList<DetilPeminjaman> dp){
+        int total = 0;
+        for (DetilPeminjaman detilPeminjaman : dp) {
+            total += detilPeminjaman.getJumlahPeminjaman();
+        }
+        return total;
+    }
+
+    public void LaporanPeminjaman(){
+        for (Peminjaman peminjaman : peminjamans) {
+            System.out.println("\nKode Peminjaman \t : "+peminjaman.getIdPeminjaman());
+            System.out.println("Tanggal peminjaman \t : "+peminjaman.getTanggal());
+            System.out.println("Pustakawan \t\t : "+peminjaman.getLibrarian().getNama());
+            System.out.println("Peminjam \t\t : "+peminjaman.getCustomer().getNama());
+            System.out.println("||=====||=====||=====||=====||");
+            ArrayList<DetilPeminjaman> detilPeminjamans = peminjaman.getDetilPeminjamans();
+            for (DetilPeminjaman dp : detilPeminjamans) {
+                System.out.println("Judul Buku \t\t : "+dp.getBuku().getTitle());
+                System.out.println("Penulis \t\t : "+dp.getBuku().getAuthor());
+                System.out.println("Jumlah PInjam \t\t : "+dp.getJumlahPeminjaman());
+            }
+            System.out.println("||=====||=====||=====||=====||");
+            System.out.println("Total Peminjaman \t : "+peminjaman.getTotal()+"\n");
+        }
     }
 }
